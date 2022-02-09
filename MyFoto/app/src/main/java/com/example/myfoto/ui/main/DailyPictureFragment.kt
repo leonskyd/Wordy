@@ -12,88 +12,113 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.viewbinding.ViewBinding
 
 import com.example.myfoto.R
-import com.example.myfoto.databinding.DailyPictureFragmentBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 
-private val ViewBinding?.image_view: Any
-    get() = Unit
-
-class DailyPictureFragment: Fragment() {
-
+class DailyPictureFragment : Fragment() {
     companion object {
-        fun newInstance() = DailyPictureFragment()
+        fun newInstance(): DailyPictureFragment {
+            val fragment = DailyPictureFragment()
+            return fragment
+        }
         private var isMain = true
-    }
-    private var _binding: DailyPictureFragmentBinding? = null
-    private val binding get() = _binding!!
+    } //Ленивая инициализация модели
 
-    private lateinit var viewModel: DailyPictureViewModel
-    private lateinit var bottomSheetBehavior
-    : BottomSheetBehavior<ConstraintLayout>
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+    private val viewModel: DailyPictureViewModel by lazy {
+        ViewModelProvider(this).get(DailyPictureViewModel::class.java)
     }
 
-    override fun onActivityCreated(
-        savedInstanceState: Bundle?) {
+        override fun onCreateView(
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
+        ): View {
+            return inflater.inflate(R.layout.daily_picture_fragment, container, false)
+        }
+
+    @SuppressLint("FragmentLiveDataObserve")
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        viewModel = ViewModelProvider(this).get(DailyPictureViewModel::class.java)
-
         viewModel.getData()
-                .observe(viewLifecycleOwner, Observer<PictureOfTheDayData> {
-                    renderData(it) })
+            .observe(this@DailyPictureFragment, Observer<PictureOfTheDayData> { renderData(it) })
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        setBottomSheetBehavior(view.findViewById(R.id.bottom_sheet_container))
+        setBottomAppBar(view)
     }
 
-    private fun setBottomSheetBehavior(bottomSheet: ConstraintLayout) {
-        bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
-        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+   override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.bottom_bar_menu, menu)
     }
 
-    private fun renderData(data:PictureOfTheDayData) = with(_binding) {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+           /* android.R.id.home -> {
+                activity?.let {
+                    BottomNavigationDrawerFragment().show(it.supportFragmentManager, "tag")
+                }
+            }*/
+            R.id.app_bar_fav -> Toast.makeText(context, "Favourite", Toast.LENGTH_SHORT).show()
+            R.id.app_bar_search -> Toast.makeText(context, "Search", Toast.LENGTH_SHORT).show()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun setBottomAppBar(view: View) {
+        val context = activity as MainActivity
+        context.setSupportActionBar(
+            view.findViewById(R.id.bottom_app_bar))
+        setHasOptionsMenu(true)
+
+       fab.setOnClickListener {
+            if (isMain) {
+                isMain = false
+                bottom_app_bar.navigationIcon = null
+                bottom_app_bar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
+                fab.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_baseline_arrow_back_24))
+                bottom_app_bar.replaceMenu(R.menu.menu_bottom_bar_other_screen)
+            } else {
+                isMain = true
+                bottom_app_bar.navigationIcon =
+                    ContextCompat.getDrawable(context, R.drawable.ic_baseline_favorite_border_24)
+                bottom_app_bar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
+                fab.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_round_radio_button_checked_24))
+                bottom_app_bar.replaceMenu(R.menu.bottom_bar_menu)
+            }
+        }
+
+    }
+
+    private fun renderData(data: PictureOfTheDayData) {
         when (data) {
             is PictureOfTheDayData.Success -> {
                 val serverResponseData = data.serverResponseData
                 val url = serverResponseData.url
                 if (url.isNullOrEmpty()) {
-                    toast("Link is Empty")
+                    //Отобразите ошибку
+                    //showError("Сообщение, что ссылка пустая")
                 } else {
-                    image_view.load(url) {
+                    //Отобразите фото
+                    //showSuccess()
+                    //Coil в работе: достаточно вызвать у нашего ImageView
+                    //нужную extension-функцию и передать ссылку и заглушки для placeholder
+                    imageview.load(url) {
                         lifecycle(this@DailyPictureFragment)
-                        error(R.drawable.ic_load_error_vector)
-                        placeholder(R.drawable.ic_no_photo_vector)
-
+                        error(R.drawable.ic_launcher_foreground)
+                        placeholder(R.drawable.ic_launcher_foreground)
                     }
                 }
-
             }
             is PictureOfTheDayData.Loading -> {
-
+                //Отобразите загрузку
+                //showLoading()
             }
             is PictureOfTheDayData.Error -> {
-
             }
-        }
-    }
-
-    private fun toast(string: String?) {
-        Toast.makeText(context,string,Toast.LENGTH_LONG).apply {
-            setGravity(Gravity.BOTTOM, 0, 250)
-            show()
         }
     }
 }
+

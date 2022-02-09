@@ -18,6 +18,8 @@ class DailyPictureViewModel(
 ) : ViewModel() {
 
     fun getData(): LiveData<PictureOfTheDayData> {
+        
+        sendServerRequest()
         return liveDataForViewToObserve
     }
 

@@ -1,4 +1,4 @@
-package com.example.myspaceapp.ui.main
+package com.example.myspaceapp.ui.earth
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -26,7 +26,7 @@ class PODFragment : Fragment() {
         return inflater.inflate(R.layout.p_o_d_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(PODViewModel::class.java)
         viewModel.getData().observe(this@PODFragment,Observer<PictureOfTheDayData> { renderData(it) })

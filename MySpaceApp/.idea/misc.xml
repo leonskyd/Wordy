@@ -3,8 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Java/MySpaceApp/app/src/main/res/drawable/ic_baseline_fiber_manual_record_24.xml" value="0.1" />
         <entry key="..\:/Java/MySpaceApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Java/MySpaceApp/app/src/main/res/layout/foto_of_mars_fragment.xml" value="0.33" />
+        <entry key="..\:/Java/MySpaceApp/app/src/main/res/layout/fragment_history_photo_of_mars.xml" value="0.3875" />
+        <entry key="..\:/Java/MySpaceApp/app/src/main/res/layout/fragment_mars_photo_detail.xml" value="0.3875" />
+        <entry key="..\:/Java/MySpaceApp/app/src/main/res/layout/fragment_more_foto_of_mars.xml" value="0.18591691995947315" />
         <entry key="..\:/Java/MySpaceApp/app/src/main/res/layout/p_o_d_fragment.xml" value="0.1" />
+        <entry key="..\:/Java/MySpaceApp/app/src/main/res/layout/solar_flare_fragment.xml" value="0.1" />
+        <entry key="..\:/Java/MySpaceApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.19722222222222222" />
       </map>
     </option>
   </component>

@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">MySpaceApp</string>
+    <string name="title_earth">Earth</string>
+    <string name="title_solar_flare">Solar flare</string>
+    <string name="title_mars">Mars</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="more_photos_here">More photos here</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="photo_details">photo details are here</string>
+    <string name="history_photo">history photo</string>
 </resources>

@@ -7,7 +7,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.example.myspaceapp.ui.main.EquilateralImageView
+
+    <com.example.myspaceapp.ui.earth.EquilateralImageView
         android:id="@+id/image_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,9 +16,9 @@
         android:contentDescription="photo of the day"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintBaseline_toTopOf="@+id/bottom_navigation_bar"
-        app:srcCompat="@drawable/ic_launcher_background"/>
+        app:srcCompat="@drawable/ic_baseline_language_24"/>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,4 +1,4 @@
-package com.example.myspaceapp.ui.main
+package com.example.myspaceapp.ui.earth
 
 import android.content.Context
 import android.util.AttributeSet

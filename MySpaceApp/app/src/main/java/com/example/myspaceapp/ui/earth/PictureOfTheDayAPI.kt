@@ -1,4 +1,4 @@
-package com.example.myspaceapp.ui.main
+package com.example.myspaceapp.ui.earth
 
 import retrofit2.Call
 import retrofit2.http.GET

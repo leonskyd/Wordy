@@ -1,4 +1,4 @@
-package com.example.myspaceapp.ui.main
+package com.example.myspaceapp.ui.earth
 
 import com.google.gson.annotations.SerializedName
 

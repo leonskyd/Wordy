@@ -1,4 +1,4 @@
-package com.example.myspaceapp.ui.main
+package com.example.myspaceapp.ui.earth
 
 import com.google.gson.GsonBuilder
 import okhttp3.Interceptor

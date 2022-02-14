@@ -1,4 +1,4 @@
-package com.example.myspaceapp.ui.main
+package com.example.myspaceapp.ui.earth
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

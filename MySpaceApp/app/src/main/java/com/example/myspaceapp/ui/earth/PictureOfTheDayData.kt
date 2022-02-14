@@ -1,4 +1,4 @@
-package com.example.myspaceapp.ui.main
+package com.example.myspaceapp.ui.earth
 
 sealed class PictureOfTheDayData {
     data class Success(val serverResponseData: PODServerResponseData)

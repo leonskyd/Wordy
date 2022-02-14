@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_earth"
+        android:icon="@drawable/ic_baseline_language_24"
+        android:title="@string/title_earth" />
+
+    <item
+        android:id="@+id/navigation_solar"
+        android:icon="@drawable/ic_baseline_flare_24"
+        android:title="@string/title_solar_flare" />
+
+    <item
+        android:id="@+id/navigation_mars"
+        android:icon="@drawable/ic_baseline_fiber_manual_record_24"
+        android:title="@string/title_mars" />
+</menu>

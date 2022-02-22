@@ -1,15 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EFD484"
+    android:id="@+id/fragment_history_photo_of_mars"
     tools:context=".mars.HistoryPhotoOfMarsFragment">
 
 
     <TextView
+        android:id="@+id/history_textView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/history_photo" />
 
-</FrameLayout>
+    <com.google.android.material.chip.Chip
+        android:id="@+id/go_for_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="60dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/go_to_details"
+        app:chipBackgroundColor="@android:color/holo_orange_light"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/mars_motion"
+        android:layout_marginTop="200dp"
+        android:layout_height="400dp"
+        android:layout_width="match_parent"
+        app:layout_anchorGravity="center"
+        app:layoutDescription="@xml/fragment_history_photo_of_mars_scene"
+        tools:ignore="MissingConstraints">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="400dp"
+            android:layout_margin="20dp"
+            app:layout_anchor="@+id/history_textView"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

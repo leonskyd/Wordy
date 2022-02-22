@@ -9,4 +9,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="photo_details">photo details are here</string>
     <string name="history_photo">history photo</string>
+    <string name="go_to_details">Go to details</string>
+    <string name="sol">sol</string>
+    <string name="earth_day">earth_day</string>
+    <string name="go_to_photo">go to photo</string>
+    <string name="camera_name">camera name</string>
+    <string name="rover_name">rover name</string>
 </resources>

@@ -9,12 +9,15 @@ import com.example.myspaceapp.R
 
 class HistoryPhotoOfMarsFragment : Fragment() {
 
+    companion object {
+        fun newInstance() = HistoryPhotoOfMarsFragment()
+    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_history_photo_of_mars, container, false)
     }
 }

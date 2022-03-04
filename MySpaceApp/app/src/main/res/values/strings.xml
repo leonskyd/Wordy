@@ -15,4 +15,5 @@
     <string name="go_to_photo">go to photo</string>
     <string name="camera_name">camera name</string>
     <string name="rover_name">rover name</string>
+    <string name="lorem">lorem ipsum</string>
 </resources>

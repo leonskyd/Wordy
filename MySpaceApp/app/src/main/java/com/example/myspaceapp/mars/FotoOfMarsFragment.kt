@@ -30,7 +30,7 @@ class FotoOfMarsFragment : Fragment() {
 
         get_more_fotos.setOnClickListener {
             val transaction = activity?.supportFragmentManager?.beginTransaction()
-            transaction?.replace(R.id.fragment_history_photo_of_mars, HistoryPhotoOfMarsFragment())
+            transaction?.replace(R.id.mars_fragment_container, HistoryPhotoOfMarsFragment())
             transaction?.commit()
         }
     }

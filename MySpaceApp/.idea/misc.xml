@@ -5,10 +5,17 @@
       <map>
         <entry key="..\:/Java/MySpaceApp/app/src/main/res/drawable/ic_baseline_fiber_manual_record_24.xml" value="0.1" />
         <entry key="..\:/Java/MySpaceApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Java/MySpaceApp/app/src/main/res/layout/activity_notes.xml" value="0.4466666666666667" />
+        <entry key="..\:/Java/MySpaceApp/app/src/main/res/layout/activity_recycler.xml" value="0.17603850050658562" />
+        <entry key="..\:/Java/MySpaceApp/app/src/main/res/layout/activity_recycler_item_earth.xml" value="0.17603850050658562" />
+        <entry key="..\:/Java/MySpaceApp/app/src/main/res/layout/activity_recycler_item_header.xml" value="0.26545086119554206" />
+        <entry key="..\:/Java/MySpaceApp/app/src/main/res/layout/activity_recycler_item_mars.xml" value="0.4466666666666667" />
         <entry key="..\:/Java/MySpaceApp/app/src/main/res/layout/foto_of_mars_fragment.xml" value="0.33" />
         <entry key="..\:/Java/MySpaceApp/app/src/main/res/layout/fragment_history_photo_of_mars.xml" value="0.1" />
         <entry key="..\:/Java/MySpaceApp/app/src/main/res/layout/fragment_mars_photo_detail.xml" value="0.1" />
         <entry key="..\:/Java/MySpaceApp/app/src/main/res/layout/fragment_more_foto_of_mars.xml" value="0.18591691995947315" />
+        <entry key="..\:/Java/MySpaceApp/app/src/main/res/layout/fragment_note.xml" value="0.5" />
+        <entry key="..\:/Java/MySpaceApp/app/src/main/res/layout/note_recycler_item.xml" value="0.1" />
         <entry key="..\:/Java/MySpaceApp/app/src/main/res/layout/p_o_d_fragment.xml" value="0.3333333333333333" />
         <entry key="..\:/Java/MySpaceApp/app/src/main/res/layout/solar_flare_fragment.xml" value="0.1" />
         <entry key="..\:/Java/MySpaceApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.19722222222222222" />

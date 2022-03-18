@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/noteImageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_notes_24" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/noteTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="note title"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/noteImageView"
+        app:layout_constraintStart_toEndOf="@+id/noteImageView"
+        app:layout_constraintTop_toTopOf="@+id/noteImageView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/noteDesriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="My solution was to strip everything out from SwipeRevealLayout and just leave the bare minimum for me to successfully implement a swipeable layout for my RecyclerView items and in the next section I’ll list the steps you need to take to add this functionality to your project"
+        android:textColor="#000"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noteImageView"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/moveItemUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:tint="@color/design_default_color_error"
+        app:layout_constraintBottom_toBottomOf="@+id/noteTextView"
+        app:layout_constraintEnd_toStartOf="@+id/moveItemDown"
+        app:layout_constraintStart_toEndOf="@+id/noteTextView"
+        app:layout_constraintTop_toTopOf="@+id/noteTextView"
+        app:srcCompat="@android:drawable/arrow_up_float" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/moveItemDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:tint="@color/design_default_color_error"
+        app:layout_constraintBottom_toBottomOf="@+id/noteTextView"
+        app:layout_constraintStart_toEndOf="@+id/moveItemUp"
+        app:layout_constraintTop_toTopOf="@+id/noteTextView"
+        app:srcCompat="@android:drawable/arrow_down_float" />
+
+       <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/removeItemImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/moveItemDown"
+        app:srcCompat="@drawable/ic_baseline_delete_forever_24" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#000"
+        app:layout_constraintBottom_toBottomOf="@+id/noteImageView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

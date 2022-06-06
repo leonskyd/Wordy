@@ -1,5 +1,6 @@
-package com.example.wordy
+package com.example.wordy.data
 
+import com.example.wordy.WordData
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

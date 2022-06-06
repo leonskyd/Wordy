@@ -1,5 +1,6 @@
-package com.example.wordy
+package com.example.wordy.data
 
+import com.example.wordy.WordData
 import io.reactivex.rxjava3.core.Single
 
 interface Repository {

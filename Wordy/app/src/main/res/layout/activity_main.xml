@@ -8,14 +8,14 @@
     android:layout_height="match_parent"
     android:id="@+id/container"
     android:background="@color/design_default_color_background"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:id="@+id/word_container"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginTop="@dimen/margin_dimen"
+        android:layout_marginStart="@dimen/margin_dimen"
+        android:layout_marginEnd="@dimen/margin_dimen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,14 +35,14 @@
         android:id="@+id/definitions_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginTop="@dimen/margin_dimen"
+        android:layout_marginStart="@dimen/margin_dimen"
+        android:layout_marginEnd="@dimen/margin_dimen"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/word_container"
         android:lines= "12"
-        android:textSize="16dp"
+        android:textSize="@dimen/text_size_for_textview"
         android:textColor="@color/secondary_main"
         android:visibility="visible"/>
 
@@ -50,11 +50,11 @@
         android:id="@+id/synonyms_are_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="@dimen/margin_dimen"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/definitions_textview"
-        android:text="we also can say it as ...."
+        android:text="@string/synonyms_title"
         android:textAlignment="center"
         />
 
@@ -62,14 +62,14 @@
         android:id="@+id/synonyms_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginTop="@dimen/margin_dimen"
+        android:layout_marginStart="@dimen/margin_dimen"
+        android:layout_marginEnd="@dimen/margin_dimen"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/synonyms_are_textview"
         android:lines= "4"
-        android:textSize="16dp"
+        android:textSize="@dimen/text_size_for_textview"
         android:textColor="@color/secondary_main"
         android:visibility="visible"/>
 
@@ -77,8 +77,8 @@
         android:id="@+id/search_fab"
         android:src="@drawable/ic_baseline_search_24"
         android:layout_width="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="@dimen/margin_dimen"
+        android:layout_marginEnd="@dimen/margin_dimen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_height="wrap_content"/>

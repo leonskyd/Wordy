@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Wordy</string>
+    <string name="synonyms_title">we also can say it as ....</string>
 </resources>

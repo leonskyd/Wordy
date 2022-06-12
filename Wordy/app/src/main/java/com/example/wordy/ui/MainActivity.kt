@@ -4,38 +4,33 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import com.example.wordy.WordyApp
-import com.example.wordy.app
-import com.example.wordy.data.Repository
 import com.example.wordy.databinding.ActivityMainBinding
 import com.example.wordy.model.DataToShow
-import javax.inject.Inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
+
 
 class MainActivity : AppCompatActivity(), AppView {
 
     private lateinit var binding: ActivityMainBinding
     private val ERROR_MESSAGE = "There is no such a word in the dictionary !!!"
-    @Inject
-    lateinit var retrofitRepository: Repository
 
-    private val viewModel: MainViewModel by lazy {
-        val factory = MainViewModelFactory(retrofitRepository)
-        ViewModelProvider(this, factory).get(MainViewModel::class.java)
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        WordyApp.instance.appDependenciesComponent.inject(this)
-        viewModel.getLiveDataObserver()
+        val viewModel: MainViewModel by viewModel()
+
+
 
         binding.searchFab.setOnClickListener {
+            viewModel.getLiveDataObserver()
             val word = binding.wordEditText.text.toString()
-            viewModel.makeCall(word)
-            viewModel.liveDataList.observe( this, Observer{ dataToShow ->
-                showSuccess(dataToShow) })
+            viewModel.let{
+                it.makeCall(word)
+                it.liveDataList.observe( this, Observer{ dataToShow ->
+                    showSuccess(dataToShow) })
+            }
         }
 
         binding.wordEditText.setOnFocusChangeListener { view, hasFocus ->

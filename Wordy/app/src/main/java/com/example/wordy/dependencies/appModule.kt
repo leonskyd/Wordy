@@ -11,8 +11,25 @@ import org.koin.dsl.module
 import retrofit2.Converter
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-
 val appModule = module {
+  //Room
+  fun provideDatabase(application: Application): SavedWordsDatabase {
+      return Room.databaseBuilder(
+          application,
+          SavedWordsDatabase::class.java,
+          "saved_word_database"
+      ).build()
+  }
+
+    fun provideDao(database: SavedWordsDatabase): WordDao{
+        return database.getWordDao()
+    }
+
+    single {provideDatabase(androidApplication())}
+    single {provideDao(get())}
+    single {DatabaseInteractor(get())}
+
+    //Retrofit
     single(named("api_url")) {"https://api.dictionaryapi.dev/"}
     single<Repository>{ RetrofitRepository(get()) }
     single<FreeDictionaryApi> {get<Retrofit>().create(FreeDictionaryApi::class.java)}
@@ -26,7 +43,7 @@ val appModule = module {
     //factories
     factory<Converter.Factory>{ GsonConverterFactory.create()}
     //ViewModel
-    viewModel {MainViewModel(get())}
+    viewModel {MainViewModel(get(),get())}
 }
 
 fun provideOkHttpClient(): OkHttpClient {

@@ -19,9 +19,8 @@ class MainActivity : AppCompatActivity(), AppView {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         val viewModel: MainViewModel by viewModel()
-
-
 
         binding.searchFab.setOnClickListener {
             viewModel.getLiveDataObserver()
@@ -33,8 +32,14 @@ class MainActivity : AppCompatActivity(), AppView {
             }
         }
 
-        binding.wordEditText.setOnFocusChangeListener { view, hasFocus ->
-            if(hasFocus) { showSearch() }
+        binding.saveFab.setOnClickListener {
+            val word = binding.wordEditText.text.toString()
+            viewModel.saveWord(word)
+        }
+
+        binding.leaveFab.setOnClickListener {
+            val intent = Intent(this, ListActivity::class.java)
+            startActivity(intent)
         }
     }
 

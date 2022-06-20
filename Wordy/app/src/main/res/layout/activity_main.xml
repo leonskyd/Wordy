@@ -72,6 +72,26 @@
         android:textSize="@dimen/text_size_for_textview"
         android:textColor="@color/secondary_main"
         android:visibility="visible"/>
+    
+     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/leave_fab"
+        android:src="@drawable/ic_baseline_view_list_24"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="@dimen/margin_dimen"
+        android:layout_marginEnd="@dimen/margin_dimen"
+        app:layout_constraintEnd_toStartOf="@+id/save_fab"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/save_fab"
+        android:src="@drawable/ic_baseline_save_24"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="@dimen/margin_dimen"
+        android:layout_marginEnd="@dimen/margin_dimen"
+        app:layout_constraintEnd_toStartOf="@+id/search_fab"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/search_fab"

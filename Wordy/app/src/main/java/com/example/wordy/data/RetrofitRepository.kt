@@ -1,5 +1,6 @@
-package com.example.wordy
+package com.example.wordy.data
 
+import com.example.wordy.WordData
 import io.reactivex.rxjava3.core.Single
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -10,15 +11,15 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
-class RetrofitRepository: Repository {
+class RetrofitRepository
+    (private val api: FreeDictionaryApi): Repository {
 
-    val httpLoggingInterceptor = HttpLoggingInterceptor()
+    /*val httpLoggingInterceptor = HttpLoggingInterceptor()
         .setLevel(HttpLoggingInterceptor.Level.BODY)
 
     val okHttpClient = OkHttpClient.Builder()
         .addInterceptor(httpLoggingInterceptor)
         .build()
-
 
     private val retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
@@ -28,7 +29,7 @@ class RetrofitRepository: Repository {
         .build()
 
     private val api: FreeDictionaryApi
-    = retrofit.create(FreeDictionaryApi::class.java)
+    = retrofit.create(FreeDictionaryApi::class.java)*/
 
 
    override fun getDataFromApi(word: String): Single<List<WordData>> {
@@ -49,8 +50,8 @@ class RetrofitRepository: Repository {
         }
     }
 
-    companion object {
+    /*companion object {
         const val BASE_URL = "https://api.dictionaryapi.dev/"
         const val BASE_URL_OTHER = "https://api.dictionaryapi.dev/"
-    }
+    }*/
 }
